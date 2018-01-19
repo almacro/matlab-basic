@@ -214,11 +214,12 @@ With this edit, line 14 of [make.m](./make.m) added above changes to:
 
 ```
             'LDTYPE="-static"',	'LDFLAGS="$LDFLAGS -L/lib4"`,...  
-````
+```
 
 But this gives the same build result:
 
 ```
+...
 > In make (line 12)
 Error using mex
 ld: cannot find -lmx
@@ -230,6 +231,7 @@ ld: cannot find -lpthread
 ld: cannot find -lc
 ld: cannot find -ldl
 ld: cannot find -lc
+...
 ```
 
 
@@ -242,12 +244,14 @@ I next removed LD_TYPE leaving only the LDFLAGS setting. After this change, line
 This lets the code compile again but gives a familiar error on the run attempt:
 
 ```
+...
 Invalid MEX-file '/home/ec2-user/Developer/Workspace/MexSample/test.mexa64':
 Missing symbol 'abort' required by
 '/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libintlc.so.5->/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libimf.so->/home/ec2-user/Developer/Workspace/MexSample/test.mexa64'
 Missing symbol 'calloc' required by
 '/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libintlc.so.5->/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libimf.so->/home/ec2-user/Developer/Workspace/MexSample/test.mexa64'
 Missing symbol 'catgets' required by
+...
 ```
 
 Still debugging...
