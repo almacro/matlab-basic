@@ -140,7 +140,6 @@ Missing symbol '__stack_chk_fail' required by
 Missing symbol 'stderr' required by
 '/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libintlc.so.5->/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libimf.so->/home/ec2-user/Developer/Workspace/MexSample/test.mexa64'
 Missing symbol 'strchr' required by
-```
 glnxa64/libintlc.so.5->/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libimf.so->/home/ec2-user/Developer/Workspace/MexSample/test.mexa64'
 Missing symbol '__strncat_chk' required by
 '/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libintlc.so.5->/home/ec2-user/Developer/Tools/MATLAB/R2017b/sys/os/glnxa64/libimf.so->/home/ec2-user/Developer/Workspace/MexSample/test.mexa64'
