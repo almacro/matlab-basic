@@ -1,4 +1,8 @@
 This issue was resolved with help from Preethi Ayyamperumal of Mathworks Technical Support team.
 
 MATLAB release 2017b is only qualified with GCC 4.9 compiler.
-After I rolled back GCC to 4.9.4 and Intel Parallel Studio XE Composer C++ to 2017 update6 this sample runs correctly. 
+After I rolled back GCC to 4.9.4 and Intel Parallel Studio XE Composer C++ to 2017 update6 this sample runs correctly.
+
+References
+===============
+https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/SystemRequirements-Release2017a_SupportedCompilers.pdf/SystemRequirements-Release2017b_SupportedCompilers.pdf
