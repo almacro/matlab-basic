@@ -1,0 +1,4 @@
+This issue was resolved with help from Preethi Ayyamperumal of Mathworks Technical Support team.
+
+MATLAB release 2017b is only qualified with GCC 4.9 compiler.
+After I rolled back GCC to 4.9.4 and Intel Parallel Studio XE Composer C++ to 2017 update5 this sample runs correctly. 
