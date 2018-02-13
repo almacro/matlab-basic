@@ -27,8 +27,8 @@ switch lower(compilerName)
     case 'llvm-clang'
         try
         mex(fileName,'CXX="/usr/local/opt/llvm/bin/clang++"', 'CXXOPTIMFLAGS="$CXXOPTIMFLAGS -O2"',...
-            'CXXFLAGS="$CXXFLAGS -I/usr/local/opt/llvm/include -fopenmp -std=c++11 -opt-report=2 -opt-report-stdout"',...
-            'LDFLAGS="$LDFLAGS -lc++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"');
+            'CXXFLAGS="$CXXFLAGS -I/usr/local/opt/llvm/include -fopenmp=libiomp5 -std=c++11 -opt-report=2 -opt-report-stdout"',...
+            'LDFLAGS="$LDFLAGS -lc++ -fopenmp=libiomp5 -L/Applications/MATLAB_R2017b.app/sys/os/maci64/ -Wl,-rpath,/Applications/MATLAB_R2017b.app/sys/os/maci64/"');
         finalCompiler = 'clang';
         catch
             mex(fileName);
