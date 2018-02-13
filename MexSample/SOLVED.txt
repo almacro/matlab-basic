@@ -1,3 +1,7 @@
+[ISSUE 1]
+
+Compiling MEX code with Intel C++ compiler fails to build on Linux with GCC 6.x.
+
 This issue was resolved with help from Preethi Ayyamperumal of Mathworks Technical Support team.
 
 MATLAB release 2017b is only qualified with GCC 4.9 compiler.
@@ -6,3 +10,21 @@ After I rolled back GCC to 4.9.4 and Intel Parallel Studio XE Composer C++ to 20
 References
 ===============
 https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/SystemRequirements-Release2017a_SupportedCompilers.pdf/SystemRequirements-Release2017b_SupportedCompilers.pdf
+
+[ISSUE 2]
+
+Compiling MEX code with llvm-clang on MacOSX fails with a crash on MATLAB 2017b.
+The same code builds and works OK on MATLAB 2016 releases.
+
+This issue was resolved with help from Zhi Dou of Mathworks Technical Support team.
+
+MATLAB release 2017b bundles OpenMP5. Compiling with an external OpenMP release can conflict with the bundled version.
+
+The workaround is to link the MEX file with MATLAB's bundled OpenMP.
+On MacOSX, the bundled OpenMP library is found at <matlabroot>/sys/os/maci64/libiomp5.dylib.
+
+When compiling MEX using OpenMP:
+
+1. Replace "-fopenmp" with "-fopenmp=libiomp5". 
+2. Add -L<matlabroot>/sys/os/maci64 to the LDFLAGS
+3. Add <matlabroot>/sys/os/maci64 to the RPATH
